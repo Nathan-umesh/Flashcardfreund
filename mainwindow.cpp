@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->toolBar->setMovable(false);
-
+    //creating a toolbar with two buttons
     auto tbar_widget = new QWidget(this);
     auto tbar_layout = new QHBoxLayout(tbar_widget);
 
@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     tbarbutton_path->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Minimum);
     tbar_layout->addWidget(tbarbutton_path);
 
-    auto tbar_middle_spacer = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    auto tbar_middle_spacer = new QSpacerItem(0, 0, QSizePolicy::Maximum, QSizePolicy::Minimum);
     tbar_layout->addItem(tbar_middle_spacer);
 
     auto tbarbutton_flashcard = new QToolButton();
@@ -31,11 +31,29 @@ MainWindow::MainWindow(QWidget *parent)
     tbar_layout->addItem(tbar_right_spacer);
 
     tbar_widget->setLayout(tbar_layout);
-
     ui->toolBar->addWidget(tbar_widget);
+    //creating pages in widget and adding button functionality
+    ui->stackedWidget->addWidget(&path);
+    ui->stackedWidget->addWidget(&flashcards);
+    /*
+    auto path_layout = new QVBoxLayout(&path);
+    path.setLayout(path_layout);
+    */
+    connect(tbarbutton_path, SIGNAL(released()), this, SLOT(switchtopath()));
+    connect(tbarbutton_flashcard, SIGNAL(released()), this, SLOT(switchtoflashcards()));
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::switchtopath()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::switchtoflashcards()
+{
+    ui->stackedWidget->setCurrentIndex(1);
 }
