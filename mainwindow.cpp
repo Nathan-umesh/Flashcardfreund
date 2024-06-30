@@ -35,10 +35,6 @@ MainWindow::MainWindow(QWidget *parent)
     //creating pages in widget and adding button functionality
     ui->stackedWidget->addWidget(&path);
     ui->stackedWidget->addWidget(&flashcards);
-    /*
-    auto path_layout = new QVBoxLayout(&path);
-    path.setLayout(path_layout);
-    */
     connect(tbarbutton_path, SIGNAL(released()), this, SLOT(switchtopath()));
     connect(tbarbutton_flashcard, SIGNAL(released()), this, SLOT(switchtoflashcards()));
 }

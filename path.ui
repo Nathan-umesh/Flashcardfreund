@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1200</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -22,7 +22,25 @@
   <property name="styleSheet">
    <string notr="true">background:rgb(255, 0, 0)</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout"/>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1180</width>
+        <height>680</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

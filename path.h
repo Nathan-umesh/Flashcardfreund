@@ -2,6 +2,11 @@
 #define PATH_H
 
 #include <QWidget>
+#include <QScrollArea>
+#include <QScrollBar>
+#include <QTimer>
+#include <QVector>
+#include <QPushButton>
 
 namespace Ui {
 class Path;
