@@ -7,6 +7,8 @@
 #include <QTimer>
 #include <QVector>
 #include <QPushButton>
+#include <QMessageBox>
+#include "progress_button.h"
 
 namespace Ui {
 class Path;
@@ -22,6 +24,9 @@ public:
 
 private:
     Ui::Path *ui;
+    QVector<Progress_button*> progress_array;
+private slots:
+    void test();
 };
 
 #endif // PATH_H

@@ -12,12 +12,14 @@ SOURCES += \
     flashcards.cpp \
     main.cpp \
     mainwindow.cpp \
-    path.cpp
+    path.cpp \
+    progress_button.cpp
 
 HEADERS += \
     flashcards.h \
     mainwindow.h \
-    path.h
+    path.h \
+    progress_button.h
 
 FORMS += \
     flashcards.ui \
