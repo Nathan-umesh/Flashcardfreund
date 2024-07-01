@@ -22,26 +22,6 @@
   <property name="styleSheet">
    <string notr="true">background: rgb(232, 116, 255)rgb(0, 255, 0)</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
-   <item>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>Flashcards</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>PushButton</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-  </layout>
  </widget>
  <resources/>
  <connections/>

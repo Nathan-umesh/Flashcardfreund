@@ -25,8 +25,11 @@ public:
 private:
     Ui::Path *ui;
     QVector<Progress_button*> progress_array;
+    int len_array;
+    int next_task;
 private slots:
-    void test();
+    void button_clicked();
+    void tonexttask();
 };
 
 #endif // PATH_H

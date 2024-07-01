@@ -2,6 +2,8 @@
 #define FLASHCARDS_H
 
 #include <QWidget>
+#include <QPushButton>
+#include <QGridLayout>
 
 namespace Ui {
 class Flashcards;
