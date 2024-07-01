@@ -13,7 +13,7 @@ Path::Path(QWidget *parent)
     auto path_layout = new QVBoxLayout(scrollarea_widget);
     // creating buttons to be displayed in scrollable area
     for(int i = 0; i < len_array; i++){
-        auto progress_button = new Progress_button();
+        auto progress_button = new flashcard_pack();
         progress_button->setFixedHeight(200);
         progress_button->setText("Task " + QString::number(len_array-i));
         connect(progress_button, &Progress_button::released, this, &Path::button_clicked);
@@ -32,10 +32,18 @@ Path::~Path()
     delete ui;
 }
 
+QVector<Progress_button*>* Path::get_progress_array()
+{
+    return &progress_array;
+}
+
 void Path::button_clicked()
 {
-    tonexttask();
-    QMessageBox::warning(this, "Title", "it did it");
+    Progress_button* button = qobject_cast<Progress_button*>(sender());
+    bool actiondone = button->button_action();
+    if (actiondone && (button == progress_array.at(next_task-1)))
+        tonexttask();
+    QMessageBox::warning(this, "congrats", "task done");
 
 }
 

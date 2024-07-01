@@ -35,8 +35,13 @@ MainWindow::MainWindow(QWidget *parent)
     //creating pages in widget and adding button functionality
     ui->stackedWidget->addWidget(&path);
     ui->stackedWidget->addWidget(&flashcards);
-    connect(tbarbutton_path, SIGNAL(released()), this, SLOT(switchtopath()));
-    connect(tbarbutton_flashcard, SIGNAL(released()), this, SLOT(switchtoflashcards()));
+    connect(tbarbutton_path, &QToolButton::released, this, &MainWindow::switchtopath);
+    connect(tbarbutton_flashcard, &QToolButton::released, this, &MainWindow::switchtoflashcards);
+    //enabling the updating of the status bar for tasks from flashcard packs
+    for(Progress_button* progress_button: *path.get_progress_array()){
+        if (auto flashcardpack_button = dynamic_cast<flashcard_pack*>(progress_button))
+            connect(flashcardpack_button, &flashcard_pack::new_flashcards, this, [this](){ui->statusbar->showMessage("20 new flashcards added", 5000);}, Qt::SingleShotConnection);
+    }
 }
 
 MainWindow::~MainWindow()

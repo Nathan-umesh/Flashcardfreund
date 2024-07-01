@@ -19,3 +19,8 @@ void Progress_button::unlock()
 {
     setEnabled(true);
 }
+
+bool Progress_button::button_action()
+{
+    return false;
+}

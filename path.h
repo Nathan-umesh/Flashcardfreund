@@ -8,7 +8,7 @@
 #include <QVector>
 #include <QPushButton>
 #include <QMessageBox>
-#include "progress_button.h"
+#include "flashcard_pack.h"
 
 namespace Ui {
 class Path;
@@ -21,7 +21,7 @@ class Path : public QWidget
 public:
     explicit Path(QWidget *parent = nullptr);
     ~Path();
-
+    QVector<Progress_button*>* get_progress_array();
 private:
     Ui::Path *ui;
     QVector<Progress_button*> progress_array;
