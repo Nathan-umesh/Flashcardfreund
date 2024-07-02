@@ -21,10 +21,10 @@ class Path : public QWidget
 public:
     explicit Path(QWidget *parent = nullptr);
     ~Path();
-    QVector<Progress_button*>* get_progress_array();
+    QVector<ProgressButton*>* get_progress_array();
 private:
     Ui::Path *ui;
-    QVector<Progress_button*> progress_array;
+    QVector<ProgressButton*> progress_array;
     int len_array;
     int next_task;
 private slots:

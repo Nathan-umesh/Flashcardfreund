@@ -1,11 +1,16 @@
 #include "flashcard_pack.h"
 
-flashcard_pack::flashcard_pack(QWidget *parent)
-    : Progress_button{parent}
+flashcardPack::flashcardPack(QWidget *parent)
+    : ProgressButton{parent}
 {}
 
-bool flashcard_pack::button_action()
+bool flashcardPack::button_action()
 {
     emit new_flashcards();
+    setStyleSheet(
+        "QPushButton{background-color:#c78f17}"
+        );
+    setEnabled(false);
+    setText("Flashcard pack opened");
     return true;
 }

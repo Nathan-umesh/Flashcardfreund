@@ -7,7 +7,7 @@ Flashcards::Flashcards(QWidget *parent)
 {
     ui->setupUi(this);
     auto grid_layout = new QGridLayout(this);
-
+    //all types of flashcard decks being created
     auto general_button = new QPushButton("General");
     general_button->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
     grid_layout->addWidget(general_button, 0, 0, 1, 0);

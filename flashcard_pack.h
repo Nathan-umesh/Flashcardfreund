@@ -3,11 +3,11 @@
 
 #include "progress_button.h"
 
-class flashcard_pack : public Progress_button
+class flashcardPack : public ProgressButton
 {
     Q_OBJECT
 public:
-    explicit flashcard_pack(QWidget *parent = nullptr);
+    explicit flashcardPack(QWidget *parent = nullptr);
     bool button_action();
 signals:
     void new_flashcards();

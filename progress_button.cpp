@@ -1,26 +1,30 @@
 #include "progress_button.h"
 
-Progress_button::Progress_button(QWidget *parent)
+ProgressButton::ProgressButton(QWidget *parent)
     : QPushButton(parent)
+    , isunlocked(false)
 {
     setEnabled(false);
     setStyleSheet(
-        "QPushButton:disabled{"
-        "background-color:#bec7c7}"
+        "QPushButton{background-color:#bec7c7}"
         );
 }
 
-bool Progress_button::isgoalsmet()
+bool ProgressButton::isgoalsmet()
 {
     return true;
 }
 
-void Progress_button::unlock()
+void ProgressButton::unlock()
 {
+    isunlocked = true;
     setEnabled(true);
+    setStyleSheet(
+        "QPushButton{background-color:#ffbd2e}"
+        );
 }
 
-bool Progress_button::button_action()
+bool ProgressButton::button_action()
 {
     return false;
 }
