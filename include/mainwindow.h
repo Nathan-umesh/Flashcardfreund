@@ -3,7 +3,7 @@
 #include <QMainWindow>
 #include <QToolButton>
 #include "path.h"
-#include "flashcards.h"
+#include "include/flashcards.h"
 /*
 #include <QHBoxLayout>
 #include <QWidget>

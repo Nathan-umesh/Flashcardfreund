@@ -1,4 +1,4 @@
-#include "progress_button.h"
+#include "include/progress_button.h"
 
 ProgressButton::ProgressButton(QWidget *parent)
     : QPushButton(parent)

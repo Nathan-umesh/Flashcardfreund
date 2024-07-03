@@ -9,24 +9,24 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    flashcard_pack.cpp \
-    flashcards.cpp \
-    main.cpp \
-    mainwindow.cpp \
-    path.cpp \
-    progress_button.cpp
+    src/path_menu/flashcard_pack.cpp \
+    src/flashcards_menu/flashcards.cpp \
+    src/main.cpp \
+    src/mainwindow.cpp \
+    src/path_menu/path.cpp \
+    src/path_menu/progress_button.cpp
 
 HEADERS += \
-    flashcard_pack.h \
-    flashcards.h \
-    mainwindow.h \
-    path.h \
-    progress_button.h
+    include/path_menu/flashcard_pack.h \
+    include/flashcards_menu/flashcards.h \
+    include/mainwindow.h \
+    include/path_menu/path.h \
+    include/path_menu/progress_button.h
 
 FORMS += \
-    flashcards.ui \
-    mainwindow.ui \
-    path.ui
+    forms/flashcards.ui \
+    forms/mainwindow.ui \
+    forms/path.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

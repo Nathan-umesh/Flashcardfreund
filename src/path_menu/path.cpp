@@ -1,4 +1,4 @@
-#include "path.h"
+#include "include/path.h"
 #include "ui_path.h"
 
 Path::Path(QWidget *parent)
