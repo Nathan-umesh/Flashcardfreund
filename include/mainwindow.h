@@ -2,8 +2,8 @@
 #define MAINWINDOW_H
 #include <QMainWindow>
 #include <QToolButton>
-#include "path.h"
-#include "include/flashcards.h"
+#include "include/path_menu/path.h"
+#include "include/flashcards_menu/flashcards.h"
 /*
 #include <QHBoxLayout>
 #include <QWidget>

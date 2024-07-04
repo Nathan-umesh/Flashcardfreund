@@ -1,4 +1,4 @@
-#include "include/flashcards.h"
+#include "include/flashcards_menu/flashcards.h"
 #include "ui_flashcards.h"
 
 Flashcards::Flashcards(QWidget *parent)

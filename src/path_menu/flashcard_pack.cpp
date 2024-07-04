@@ -1,4 +1,4 @@
-#include "include/flashcard_pack.h"
+#include "include/path_menu/flashcard_pack.h"
 
 flashcardPack::flashcardPack(QWidget *parent)
     : ProgressButton{parent}

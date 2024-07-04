@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    src/flashcards_menu/flashcard.cpp \
     src/path_menu/flashcard_pack.cpp \
     src/flashcards_menu/flashcards.cpp \
     src/main.cpp \
@@ -21,7 +22,8 @@ HEADERS += \
     include/flashcards_menu/flashcards.h \
     include/mainwindow.h \
     include/path_menu/path.h \
-    include/path_menu/progress_button.h
+    include/path_menu/progress_button.h \
+    include/flashcards_menu/flashcard.h
 
 FORMS += \
     forms/flashcards.ui \
@@ -32,3 +34,16 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+
+
+win32: LIBS += -L$$PWD/../../../../vcpkg/installed/x64-windows/lib/ -llibcurl
+
+INCLUDEPATH += $$PWD/../../../../vcpkg/installed/x64-windows/include/curl
+DEPENDPATH += $$PWD/../../../../vcpkg/installed/x64-windows/include/curl
+
+
+win32: LIBS += -L$$PWD/../../../../vcpkg/installed/x64-windows/lib/ -llibxml2
+
+INCLUDEPATH += $$PWD/../../../../vcpkg/installed/x64-windows/include/libxml2
+DEPENDPATH += $$PWD/../../../../vcpkg/installed/x64-windows/include/libxml2

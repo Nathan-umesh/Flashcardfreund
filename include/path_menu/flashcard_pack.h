@@ -1,8 +1,7 @@
 #ifndef FLASHCARD_PACK_H
 #define FLASHCARD_PACK_H
 
-#include "include/progress_button.h"
-
+#include "include/path_menu/progress_button.h"
 class flashcardPack : public ProgressButton
 {
     Q_OBJECT

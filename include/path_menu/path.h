@@ -8,7 +8,7 @@
 #include <QVector>
 #include <QPushButton>
 #include <QMessageBox>
-#include "include/flashcard_pack.h"
+#include "include/path_menu/flashcard_pack.h"
 
 namespace Ui {
 class Path;
