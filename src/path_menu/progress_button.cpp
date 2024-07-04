@@ -1,6 +1,6 @@
 #include "include/path_menu/progress_button.h"
 
-ProgressButton::ProgressButton(QWidget *parent)
+progressButton::progressButton(QWidget *parent)
     : QPushButton(parent)
     , isunlocked(false)
 {
@@ -10,12 +10,12 @@ ProgressButton::ProgressButton(QWidget *parent)
         );
 }
 
-bool ProgressButton::isgoalsmet()
+bool progressButton::isgoalsmet()
 {
     return true;
 }
 
-void ProgressButton::unlock()
+void progressButton::unlock()
 {
     isunlocked = true;
     setEnabled(true);
@@ -24,7 +24,7 @@ void ProgressButton::unlock()
         );
 }
 
-bool ProgressButton::button_action()
+bool progressButton::button_action()
 {
     return false;
 }

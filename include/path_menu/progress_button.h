@@ -2,11 +2,11 @@
 #define PROGRESS_BUTTON_H
 #include <QPushButton>
 
-class ProgressButton : public QPushButton
+class progressButton : public QPushButton
 {
     Q_OBJECT
 public:
-    explicit ProgressButton(QWidget *parent = nullptr);
+    explicit progressButton(QWidget *parent = nullptr);
     bool isunlocked;
     bool isgoalsmet();
     void unlock();

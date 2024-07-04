@@ -1,9 +1,9 @@
-#include "include/path_menu/path.h"
+#include "include/path_menu/path_page.h"
 #include "ui_path.h"
 
-Path::Path(QWidget *parent)
+pathPage::pathPage(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::Path)
+    , ui(new Ui::pathPage)
     ,len_array(20)
     , next_task(1)
 {
@@ -13,10 +13,10 @@ Path::Path(QWidget *parent)
     auto path_layout = new QVBoxLayout(scrollarea_widget);
     // creating buttons to be displayed in scrollable area
     for(int i = 0; i < len_array; i++){
-        auto progress_button = new flashcardPack();
+        auto progress_button = new flashcardButton();
         progress_button->setFixedHeight(200);
         progress_button->setText("Locked");
-        connect(progress_button, &ProgressButton::released, this, &Path::button_clicked);
+        connect(progress_button, &progressButton::released, this, &pathPage::button_clicked);
         path_layout->addWidget(progress_button);
         progress_array.insert(0, progress_button);
     };
@@ -28,19 +28,19 @@ Path::Path(QWidget *parent)
     //sets scrollbar at the bottom of the screen
     QTimer::singleShot(0, this, [this]{ui->scrollArea->verticalScrollBar()->setValue(ui->scrollArea->verticalScrollBar()->maximum());});
 }
-Path::~Path()
+pathPage::~pathPage()
 {
     delete ui;
 }
 
-QVector<ProgressButton*>* Path::get_progress_array()
+QVector<progressButton*>* pathPage::get_progress_array()
 {
     return &progress_array;
 }
 
-void Path::button_clicked()
+void pathPage::button_clicked()
 {
-    ProgressButton* button = qobject_cast<ProgressButton*>(sender());
+    progressButton* button = qobject_cast<progressButton*>(sender());
     bool actiondone = button->button_action();
     if (actiondone && (button == progress_array.at(next_task-1)) && (next_task < len_array))
         tonexttask();
@@ -48,7 +48,7 @@ void Path::button_clicked()
 
 }
 
-void Path::tonexttask()
+void pathPage::tonexttask()
 {
     if (progress_array.at(next_task)->isgoalsmet() && (progress_array.at(next_task-1)->isunlocked)){
         progress_array.at(next_task)->unlock();

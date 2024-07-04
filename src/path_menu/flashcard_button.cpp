@@ -1,10 +1,10 @@
-#include "include/path_menu/flashcard_pack.h"
+#include "include/path_menu/flashcard_button.h"
 
-flashcardPack::flashcardPack(QWidget *parent)
-    : ProgressButton{parent}
+flashcardButton::flashcardButton(QWidget *parent)
+    : progressButton{parent}
 {}
 
-bool flashcardPack::button_action()
+bool flashcardButton::button_action()
 {
     emit new_flashcards();
     setStyleSheet(

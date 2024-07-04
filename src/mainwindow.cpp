@@ -38,9 +38,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(tbarbutton_path, &QToolButton::released, this, &MainWindow::switchtopath);
     connect(tbarbutton_flashcard, &QToolButton::released, this, &MainWindow::switchtoflashcards);
     //enabling the updating of the status bar for tasks from flashcard packs
-    for(ProgressButton* progress_button: *path.get_progress_array()){
-        if (auto flashcardpack_button = dynamic_cast<flashcardPack*>(progress_button))
-            connect(flashcardpack_button, &flashcardPack::new_flashcards, this, [this](){ui->statusbar->showMessage("20 new flashcards added", 5000);}, Qt::SingleShotConnection);
+    for(progressButton* progress_button: *path.get_progress_array()){
+        if (auto flashcardpack_button = dynamic_cast<flashcardButton*>(progress_button))
+            connect(flashcardpack_button, &flashcardButton::new_flashcards, this, [this](){ui->statusbar->showMessage("20 new flashcards added", 5000);}, Qt::SingleShotConnection);
     }
 }
 

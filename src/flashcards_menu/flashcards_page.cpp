@@ -1,9 +1,9 @@
-#include "include/flashcards_menu/flashcards.h"
+#include "include/flashcards_menu/flashcards_page.h"
 #include "ui_flashcards.h"
 
-Flashcards::Flashcards(QWidget *parent)
+flashcardsPage::flashcardsPage(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::Flashcards)
+    , ui(new Ui::flashcardsPage)
 {
     ui->setupUi(this);
     auto grid_layout = new QGridLayout(this);
@@ -77,7 +77,7 @@ Flashcards::Flashcards(QWidget *parent)
     grid_layout->addWidget(science_button, 8, 1);
 }
 
-Flashcards::~Flashcards()
+flashcardsPage::~flashcardsPage()
 {
     delete ui;
 }

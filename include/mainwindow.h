@@ -2,8 +2,8 @@
 #define MAINWINDOW_H
 #include <QMainWindow>
 #include <QToolButton>
-#include "include/path_menu/path.h"
-#include "include/flashcards_menu/flashcards.h"
+#include "include/path_menu/path_page.h"
+#include "include/flashcards_menu/flashcards_page.h"
 /*
 #include <QHBoxLayout>
 #include <QWidget>
@@ -26,8 +26,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    Flashcards flashcards;
-    Path path;
+    flashcardsPage flashcards;
+    pathPage path;
 private slots:
     void switchtopath();
     void switchtoflashcards();
